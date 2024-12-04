@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Guesser</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <img src="rgif.gif" width="70" height="70"alt="Logo">
+            <h1>Barbie Guesser!</h1>
+        </div>
+        <div id="world-stats">
+            <p>Loading stats...</p>
+        </div>
+
+        <div id="guesses"></div>
+
+        <div class="input-container">
+            <input type="text" id="hero-input" placeholder="Type a hero name..." autocomplete="off">
+            <button id="guess-button">Guess</button>
+            <ul id="suggestions"></ul>
+        </div>
+
+        <div class="result-container" id="results"></div>
+        <button id="random-hero-button" class="random-hero-button" style="display: none;">Try a Random One!</button>
+
+        <div class="instructions-container" id="instructions">
+            <h2>Basic Instructions</h2>
+            <p>Try to guess today's barbie.</p>
+            <p>Start by guessing a barbie, then look at the stats for hints!</p>
+            <p><br></p>
+            <p><span class="incorrect">Red</span> means incorrect.</p>
+            <p><span class="partial">Yellow</span> means partially correct.</p>
+            <p><span class="correct">Green</span> means correct.</p>
+            <p><br></p>
+            <p>You can give up by typing "GG"</p>
+            <p><br></p>
+            <p>Touch or mouse over a stats for more clarification about it.</p>
+            <p>Good luck, have fun!</p>
+            <p><br></p>
+            <span id="already-guessed">
+                <p>Already guessed today's hero?</p>
+                <p><button id="random-hero-button-intro" class="random-hero-button">Try a Random One!</button></p>
+            </span>
+        </div>
+
+        <div id="global-tooltip" class="tooltiptext"></div>
+    </div>
+    <footer>
+        <p><button id="changelog-button">Show Patch Notes</button> Version 0.2.4 - <a
+                href="https://github.com/saint11/HeroGuesser/" target="_blank">GitHub</a> - Open Source, made by <a
+                href="https://saint11.org">Saint11</a> and customized by Moggers</p>
+
+        <div id="changelog-content" style="display: none;"></div>
+    </footer>
+
+    <div id="feedback-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="feedback-title">Send Feedback</h2>
+            <form id="feedback-form">
+                <div id="dynamic-feedback-fields"></div>
+                <div id="feedback-disclaimer"></div>
+                <textarea id="feedback" name="feedback" rows="4" placeholder="Suggestion..." required></textarea>
+                <p><button class="submit-feedback-button" type="submit">Submit</button></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
